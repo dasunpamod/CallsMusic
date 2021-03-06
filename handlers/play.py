@@ -24,7 +24,7 @@ async def play(client: Client, message_: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"Videos longer than {DURATION_LIMIT} minute(s) aren't allowed, the provided video is {audio.duration / 60} minute(s)"
+                f"විඩියො එකෙ දිගෙ {DURATION_LIMIT} minute(s) විඩියො එකෙ දිග වෑඩි ඔයි තමුසෙද hosting වලට සල්ලි දෙන්නෙ දිග බලන්කො මෙකෙ {audio.duration / 60} minute(s)"
             )
 
         file_name = audio.file_id + audio.file_name.split(".")[-1]
@@ -50,7 +50,7 @@ async def play(client: Client, message_: Message):
                         break
 
         if offset == None:
-            await res.edit_text("❕ You did not give me anything to play.")
+            await res.edit_text("ප්ලෙ කරන්න මොනාහරි දියම් ලබ්බ්ද ප්ලෙ කරන්නෙ")
             return
 
         url = text[offset:offset+length]
